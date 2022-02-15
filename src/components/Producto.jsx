@@ -1,4 +1,5 @@
 import React from 'react'
+import "../statics/css/Producto.css"
 
 const Producto = (props) => {
     const {marca, modelo,precio,imagen,id} = props
@@ -13,11 +14,16 @@ const Producto = (props) => {
     }
     return (
         <>
-        <h3>{marca}</h3>
-        <h4>{modelo}</h4>
-        <h5>{precio}</h5>
-        <img src={imagen[0].formats.thumbnail.url} alt="" />
-        <button onClick={handleClick}>Agregar al carrito</button>
+        <div className="card-producto">
+            <h3 className="prod-marca">{marca}</h3>
+            <h4 className="prod-modelo">{modelo}</h4>
+            
+            <div className="prod-img-wrapper">
+                <img src={imagen[0].formats.thumbnail.url} alt="" />
+            </div>
+            <h5 className="prod-precio">${precio}</h5>
+            <button onClick={handleClick}>Agregar al carrito</button>
+        </div>
         </>
     )
 }

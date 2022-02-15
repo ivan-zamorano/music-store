@@ -26,9 +26,6 @@ const Header = () => {
                     <li className="header-btn">
                         <Link to="/productos">Productos</Link>
                     </li>
-                    {/* <li className="header-btn">
-                        <Link to="carrito">Carrito</Link>
-                    </li> */}
                     <li >
                         <Link to="/carrito">
                             {cart}

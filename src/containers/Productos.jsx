@@ -1,5 +1,7 @@
 import React, {useState, useEffect} from 'react'
 import Producto from '../components/Producto'
+import "../statics/css/Productos.css"
+import Filtros from '../components/Filtros'
 
 const Productos = () => {
     let url = "https://music-store-ssd.herokuapp.com/productos"
@@ -13,12 +15,17 @@ const Productos = () => {
     })
     
     return (
-        <div>
-            <h1>Productos</h1>
-            {productos.length > 0 && 
-            productos.map((item, i) => <Producto key={item.id} {...item}></Producto>)
-            }
+        <>
+        <div className="productos-section-grid">
+            <div className="filtros"><Filtros></Filtros></div>
+            <div className="grid-productos">
+                {productos.length > 0 && 
+                productos.map((item, i) => <Producto key={item.id} {...item}></Producto>)
+                }
+            </div>
         </div>
+            
+        </>
     )
 }
 
