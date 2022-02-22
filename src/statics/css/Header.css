@@ -1,0 +1,27 @@
+@import url("https://fonts.googleapis.com/css2?family=Lobster&display=swap");
+
+header {
+  background-color: #0097a7;
+}
+
+.home-logo {
+  font-family: "Lobster", cursive;
+  letter-spacing: 3px;
+
+  color: #e0e0e0;
+}
+
+.home-logo h3 {
+  *font-size: 35px;
+  line-height: 25px;
+}
+
+.logo-wrapper {
+  display: flex;
+  padding: 10px;
+}
+
+.header-cart {
+  color: #ffffff;
+  font-size: 22px;
+}

@@ -1,0 +1,12 @@
+.productos-section-grid {
+  margin-top: 30px;
+  display: grid;
+  grid-template-columns: 25% 75%;
+}
+
+.grid-productos {
+  display: grid;
+  grid-template-columns: auto auto auto;
+  grid-row-gap: 20px;
+  grid-column-gap: 20px;
+}

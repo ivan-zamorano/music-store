@@ -1,0 +1,24 @@
+.filtros {
+  padding: 15px 15px;
+  margin: 10px 5px;
+  width: 60%;
+  border: 2px solid rgba(34, 34, 34, 0.815);
+  border-radius: 3px;
+}
+
+.filtros li {
+  width: 100%;
+  display: inline-block;
+  font-size: 18px;
+  font-weight: 600;
+  padding: 3px;
+  border-bottom: 1px solid #666;
+  cursor: pointer;
+  transition: 0.25s;
+}
+
+.filtros li:hover {
+  font-size: 22px;
+  transition: 0.25s;
+  color: #0097a7;
+}
