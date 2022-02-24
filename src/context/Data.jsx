@@ -12,6 +12,7 @@ const Data = (props) => {
     filtros: [],
     seleccion: [],
     display: [],
+    detalle: [],
   };
 
   const [state, dispatch] = useReducer(Actions, estadoInicial);
@@ -40,7 +41,6 @@ const Data = (props) => {
     const res = await axios.get(
       "https://music-store-ssd.herokuapp.com/categorias"
     );
-    console.log("FILTROS: ", res.data);
     dispatch({ type: "GET_FILTROS", payload: res.data });
   };
 
@@ -50,6 +50,11 @@ const Data = (props) => {
 
   const delAllFiltros = () => {
     dispatch({ type: "DEL_ALL_FILTROS", payload: state.seleccion });
+  };
+
+  const getDetalle = (item) => {
+    dispatch({ type: "GET_DETALLE", payload: item });
+    console.log(item);
   };
 
   //Al atributo value le vamos a pasar un objeto con la data
@@ -62,6 +67,7 @@ const Data = (props) => {
         filtros: state.filtros,
         seleccion: state.seleccion,
         display: state.display,
+        detalle: state.detalle,
         getProductos,
         addCarrito,
         delCarrito,
@@ -69,6 +75,7 @@ const Data = (props) => {
         addFiltros,
         delAllFiltros,
         toRender,
+        getDetalle,
       }}
     >
       {children}

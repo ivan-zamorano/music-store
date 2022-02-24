@@ -4,7 +4,7 @@
   align-items: center;
   justify-content: center;
   padding: 10px;
-  box-shadow: 0px 0px 5px rgba(34, 34, 34, 0.479);
+  box-shadow: 1px 1px 8px rgba(34, 34, 34, 0.479);
 }
 
 .prod-img-wrapper {

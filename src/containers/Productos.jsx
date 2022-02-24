@@ -5,11 +5,10 @@ import Filtros from "../components/Filtros";
 import Context from "../context/Context";
 
 const Productos = () => {
-  const { display, getProductos, toRender, seleccion } = useContext(Context);
+  const { display, getProductos, seleccion } = useContext(Context);
 
   useEffect(() => {
     getProductos();
-    //toRender();
   }, [seleccion]);
 
   return (

@@ -7,17 +7,15 @@ const GET_FILTROS = "GET_FILTROS";
 const ADD_FILTROS = "ADD_FILTROS";
 const DEL_ALL_FILTROS = "DEL_ALL_FILTROS";
 const DISPLAY = "DISPLAY";
+const GET_DETALLE = "GET_DETALLE";
 
 const Actions = (state, action) => {
   const { payload, type } = action;
   switch (type) {
     case GET_PRODUCTOS:
-      console.log("PRODUCTOS: ", payload);
       return { ...state, productos: payload };
     case DISPLAY:
-      console.log(payload, "desde display");
       if (state.seleccion.length > 0) {
-        console.log("Filtro: ", state.seleccion[0].categoria);
         return {
           ...state,
           display: state.productos.filter(
@@ -25,7 +23,6 @@ const Actions = (state, action) => {
           ),
         };
       } else if (state.seleccion.length === 0) {
-        console.log("no filter");
         return {
           ...state,
           display: payload,
@@ -56,6 +53,11 @@ const Actions = (state, action) => {
       return {
         ...state,
         seleccion: [],
+      };
+    case GET_DETALLE:
+      return {
+        ...state,
+        detalle: state.productos.filter((item) => item.id === payload),
       };
     default:
       return;

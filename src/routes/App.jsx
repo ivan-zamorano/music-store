@@ -3,6 +3,7 @@ import Home from "../containers/Home";
 import Carrito from "../containers/Carrito";
 import Productos from "../containers/Productos";
 import Error404 from "../containers/Error404";
+import Detalle from "../containers/Detalle";
 import Layout from "../components/Layout";
 import Data from "../context/Data";
 
@@ -22,6 +23,7 @@ const App = () => {
               <Route path="/" element={<Home />} />
               <Route path="/carrito" element={<Carrito />} />
               <Route path="/productos" element={<Productos />} />
+              <Route path="/detalle" element={<Detalle />} />
               <Route path="" element={<Error404 />} />
             </Routes>
           </Layout>
