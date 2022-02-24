@@ -18,7 +18,11 @@ body {
 }
 
 .home-splash {
+<<<<<<< HEAD
   min-height: calc(100vh - 92px);
+=======
+  min-height: calc(100vh - 80px);
+>>>>>>> ad91d0c8a26ac6334a1fac5caff17ec11a96f7a3
   width: 100%;
   background-image: url(../img/splash-bg.jpg);
   background-repeat: no-repeat;
@@ -27,6 +31,16 @@ body {
   margin: 0 auto;
 }
 
+<<<<<<< HEAD
+=======
+.container {
+  width: 70%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+>>>>>>> ad91d0c8a26ac6334a1fac5caff17ec11a96f7a3
 .splash {
   color: rgb(255, 223, 164);
   text-shadow: 5px 3px 3px rgb(36, 36, 36);
@@ -75,7 +89,10 @@ body {
   background-image: linear-gradient(to bottom, #00bcd4, #0097a7);
   text-decoration: none;
 }
+<<<<<<< HEAD
 
 .btn-txt span:nth-child(2) {
   font-size: 18px;
 }
+=======
+>>>>>>> ad91d0c8a26ac6334a1fac5caff17ec11a96f7a3

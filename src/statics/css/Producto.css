@@ -1,10 +1,17 @@
 .card-producto {
+<<<<<<< HEAD
+=======
+  border: solid 1px red;
+>>>>>>> ad91d0c8a26ac6334a1fac5caff17ec11a96f7a3
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   padding: 10px;
+<<<<<<< HEAD
   box-shadow: 1px 1px 8px rgba(34, 34, 34, 0.479);
+=======
+>>>>>>> ad91d0c8a26ac6334a1fac5caff17ec11a96f7a3
 }
 
 .prod-img-wrapper {
@@ -15,8 +22,11 @@
   align-items: center;
   justify-content: center;
 }
+<<<<<<< HEAD
 
 .card-producto button {
   font-size: 14px;
   margin: 10px 0;
 }
+=======
+>>>>>>> ad91d0c8a26ac6334a1fac5caff17ec11a96f7a3
