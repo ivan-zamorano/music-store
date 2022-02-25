@@ -1,15 +1,9 @@
 .productos-section-grid {
-<<<<<<< HEAD
   margin-top: 50px;
   margin-right: 30px;
   display: grid;
   grid-template-columns: 25% 75%;
   *border: 2px solid red;
-=======
-  margin-top: 30px;
-  display: grid;
-  grid-template-columns: 25% 75%;
->>>>>>> ad91d0c8a26ac6334a1fac5caff17ec11a96f7a3
 }
 
 .grid-productos {
