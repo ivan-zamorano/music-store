@@ -55,10 +55,18 @@ const Actions = (state, action) => {
         seleccion: [],
       };
     case GET_DETALLE:
+      const picked = state.productos.filter((item) => item.id === payload);
+      let data = JSON.parse(sessionStorage.getItem("estado"));
+      data.detalle = picked;
+      sessionStorage.setItem("estado", JSON.stringify(data));
       return {
         ...state,
-        detalle: state.productos.filter((item) => item.id === payload),
+        detalle: picked,
       };
+    // return {
+    //   ...state,
+    //   detalle: state.productos.filter((item) => item.id === payload),
+    // };
     default:
       return;
   }

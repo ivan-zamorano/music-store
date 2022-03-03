@@ -15,6 +15,11 @@ const Data = (props) => {
     detalle: [],
   };
 
+  if (sessionStorage.length === 0) {
+    sessionStorage.setItem("estado", JSON.stringify(estadoInicial));
+    console.log("Estado seteado OK");
+  }
+
   const [state, dispatch] = useReducer(Actions, estadoInicial);
 
   const getProductos = async () => {
@@ -67,7 +72,7 @@ const Data = (props) => {
         filtros: state.filtros,
         seleccion: state.seleccion,
         display: state.display,
-        detalle: state.detalle,
+        detalle: JSON.parse(sessionStorage.estado).detalle,
         getProductos,
         addCarrito,
         delCarrito,
