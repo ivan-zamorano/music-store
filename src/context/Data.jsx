@@ -15,10 +15,14 @@ const Data = (props) => {
     detalle: [],
   };
 
+  //sessionStorage.clear();
   if (sessionStorage.length === 0) {
-    sessionStorage.setItem("estado", JSON.stringify(estadoInicial));
-    console.log("Estado seteado OK");
+    sessionStorage.setItem("detalle", "[]");
+    sessionStorage.setItem("carrito", "[]");
   }
+
+  let storageCarrito = JSON.parse(sessionStorage.getItem("carrito"));
+  const storageDetalle = JSON.parse(sessionStorage.getItem("detalle"));
 
   const [state, dispatch] = useReducer(Actions, estadoInicial);
 
@@ -34,11 +38,23 @@ const Data = (props) => {
     dispatch({ type: "DISPLAY", payload: data });
   };
 
+  // const addCarrito = (item) => {
+  //   dispatch({ type: "ADD_CARRITO", payload: item });
+  // };
+
   const addCarrito = (item) => {
-    dispatch({ type: "ADD_CARRITO", payload: item });
+    const prod = state.productos.filter((ite) => ite.id === item);
+    console.log(item, typeof state.productos[0].id);
+    storageCarrito.push(prod[0]);
+    sessionStorage.setItem("carrito", JSON.stringify(storageCarrito));
+    console.log(storageCarrito);
+    dispatch({ type: "ADD_CARRITO", payload: prod });
   };
 
   const delCarrito = (item) => {
+    const newCarrito = storageCarrito.filter((ite) => ite.id !== item);
+    sessionStorage.setItem("carrito", JSON.stringify(newCarrito));
+    console.log(newCarrito);
     dispatch({ type: "DEL_CARRITO", payload: item });
   };
 
@@ -58,8 +74,13 @@ const Data = (props) => {
   };
 
   const getDetalle = (item) => {
-    dispatch({ type: "GET_DETALLE", payload: item });
-    console.log(item);
+    const picked = state.productos.filter((ite) => ite.id === item);
+    sessionStorage.setItem("detalle", JSON.stringify(picked));
+    dispatch({ type: "GET_DETALLE", payload: picked });
+  };
+
+  const dotPrice = (precio) => {
+    return precio.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
   };
 
   //Al atributo value le vamos a pasar un objeto con la data
@@ -68,11 +89,11 @@ const Data = (props) => {
     <Context.Provider
       value={{
         productos: state.productos,
-        carrito: state.carrito,
+        carrito: storageCarrito,
         filtros: state.filtros,
         seleccion: state.seleccion,
         display: state.display,
-        detalle: JSON.parse(sessionStorage.estado).detalle,
+        detalle: storageDetalle,
         getProductos,
         addCarrito,
         delCarrito,
@@ -81,6 +102,7 @@ const Data = (props) => {
         delAllFiltros,
         toRender,
         getDetalle,
+        dotPrice,
       }}
     >
       {children}

@@ -7,6 +7,7 @@ const Detalle = () => {
   const { detalle, addCarrito } = useContext(Context);
 
   const data = detalle[0];
+  console.log(detalle);
   return (
     <>
       <div className="detalle-wrp">

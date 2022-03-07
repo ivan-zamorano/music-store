@@ -5,11 +5,11 @@ import { Link } from "react-router-dom";
 
 const Producto = (props) => {
   const { marca, modelo, precio, imagen, id } = props;
-  const { addCarrito, getDetalle } = useContext(Context);
+  const { addCarrito, getDetalle, dotPrice } = useContext(Context);
 
-  const dotPrice = (precio) => {
-    return precio.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
-  };
+  // const dotPrice = (precio) => {
+  //   return precio.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
+  // };
 
   return (
     <>

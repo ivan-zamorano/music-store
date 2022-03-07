@@ -1,32 +1,35 @@
 import React, { useContext } from "react";
 import Context from "../context/Context";
-import ItemCarrito from "../components/ItemCarrito";
 import "../statics/css/Carrito.css";
+import ContentCarrito from "../components/ContentCarrito";
+import CarritoVacio from "../components/CarritoVacio";
 
 const Carrito = () => {
-  const { carrito } = useContext(Context);
+  const { carrito, dotPrice } = useContext(Context);
 
   let total = 0;
 
   const getTotal = carrito.map((item) => {
-    total = total + parseInt(item[0].precio);
+    total = total + parseInt(item.precio);
   });
+
+  const toRender = () => {
+    if (carrito.length === 0) {
+      return <CarritoVacio />;
+    } else {
+      return <ContentCarrito />;
+    }
+  };
 
   return (
     <>
       <div className="carrito container-fluid">
         <div className="row ">
-          <div className="col-md-6">
-            <div className="carrito-listadito">
-              {carrito.map((item, i) => (
-                <ItemCarrito {...item} key={i} />
-              ))}
-            </div>
-          </div>
+          <div className="col-md-6">{toRender()}</div>
           <div className="col-md-6">
             <div className="carrito-precio">
               Total a pagar: <br />
-              <strong>AR$ {total}</strong>
+              <strong>AR$ {dotPrice(total)}</strong>
             </div>
           </div>
         </div>

@@ -31,10 +31,7 @@ const Actions = (state, action) => {
     case ADD_CARRITO:
       return {
         ...state,
-        carrito: [
-          ...state.carrito,
-          state.productos.filter((item) => item.id === payload),
-        ],
+        carrito: [...state.carrito, payload],
       };
     case DEL_CARRITO:
       return {
@@ -55,13 +52,9 @@ const Actions = (state, action) => {
         seleccion: [],
       };
     case GET_DETALLE:
-      const picked = state.productos.filter((item) => item.id === payload);
-      let data = JSON.parse(sessionStorage.getItem("estado"));
-      data.detalle = picked;
-      sessionStorage.setItem("estado", JSON.stringify(data));
       return {
         ...state,
-        detalle: picked,
+        detalle: payload,
       };
     // return {
     //   ...state,

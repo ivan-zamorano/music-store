@@ -11,6 +11,8 @@ const Productos = () => {
     getProductos();
   }, [seleccion]);
 
+  console.log(display);
+
   return (
     <>
       <div className="productos-section-grid">
