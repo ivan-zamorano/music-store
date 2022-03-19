@@ -1,3 +1,39 @@
 .carrito {
+  min-height: 100vh;
   margin-top: 50px;
+}
+
+.comprar {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 80%;
+  margin: 2rem auto;
+  *position: fixed;
+  bottom: 10%;
+}
+
+.btn-comprar {
+  background: #0097a7;
+  padding: 0.5rem;
+  width: 8rem;
+  border: none;
+  border-radius: 5px;
+  color: #fff;
+  font-size: 1rem;
+  transition: 0.3s;
+}
+
+.carrito-vacio {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 70vh;
+}
+
+.carrito-vacio p a {
+  text-decoration: none;
+  padding: 3px;
 }

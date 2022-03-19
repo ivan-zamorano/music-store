@@ -13,6 +13,7 @@ const Data = (props) => {
     seleccion: [],
     display: [],
     detalle: [],
+    loading: false,
   };
 
   //sessionStorage.clear();
@@ -30,6 +31,7 @@ const Data = (props) => {
     const res = await axios.get(
       "https://music-store-ssd.herokuapp.com/productos"
     );
+    setLoading(true);
     dispatch({ type: "GET_PRODUCTOS", payload: res.data });
     toRender(res.data);
   };
@@ -37,10 +39,6 @@ const Data = (props) => {
   const toRender = (data) => {
     dispatch({ type: "DISPLAY", payload: data });
   };
-
-  // const addCarrito = (item) => {
-  //   dispatch({ type: "ADD_CARRITO", payload: item });
-  // };
 
   const addCarrito = (item) => {
     const prod = state.productos.filter((ite) => ite.id === item);
@@ -83,8 +81,11 @@ const Data = (props) => {
     return precio.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
   };
 
-  //Al atributo value le vamos a pasar un objeto con la data
-  //que queremos entregar desde Context.Provider
+  const setLoading = (load) => {
+    console.log(load);
+    dispatch({ type: "SET_LOADING", payload: load });
+  };
+
   return (
     <Context.Provider
       value={{
@@ -94,6 +95,7 @@ const Data = (props) => {
         seleccion: state.seleccion,
         display: state.display,
         detalle: storageDetalle,
+        loading: state.loading,
         getProductos,
         addCarrito,
         delCarrito,
@@ -103,6 +105,7 @@ const Data = (props) => {
         toRender,
         getDetalle,
         dotPrice,
+        setLoading,
       }}
     >
       {children}

@@ -5,26 +5,43 @@ import Filtros from "../components/Filtros";
 import Context from "../context/Context";
 
 const Productos = () => {
-  const { display, getProductos, seleccion } = useContext(Context);
+  const { display, getProductos, seleccion, loading } = useContext(Context);
 
   useEffect(() => {
     getProductos();
+    //setLoading();
   }, [seleccion]);
 
-  console.log(display);
+  let load = document.getElementById("loading");
+  //console.log(load);
+  // if (loading === true) {
+  //   load.style.display = "none";
+  // }
+
+  let deconstruct = [];
+  display.map((item) => {
+    deconstruct.push(<Producto {...item} key={item.id}></Producto>);
+  });
+  const renderItems = () => {};
 
   return (
     <>
-      <div className="productos-section-grid">
-        <div className="">
-          <Filtros></Filtros>
+      {/* <div className="loading" id="loading">
+        <div className="spinner-border" role="status">
+          <p className="visually-hidden">Loading...</p>
         </div>
-        <div className="grid-productos">
-          {display.map((item) => (
-            <Producto {...item} key={item.id}></Producto>
-          ))}
+      </div> */}
+      <section id="productos">
+        <div className="productos-section">
+          <div className="container">
+            <div className="grid-productos">
+              {display.map((item) => (
+                <Producto {...item} key={item.id}></Producto>
+              ))}
+            </div>
+          </div>
         </div>
-      </div>
+      </section>
     </>
   );
 };

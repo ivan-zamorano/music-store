@@ -15,21 +15,27 @@ const Producto = (props) => {
     <>
       <div className="card-producto">
         <h2 className="prod-marca">{marca}</h2>
-        <h4 className="prod-modelo">{modelo}</h4>
+        <p className="prod-modelo">{modelo}</p>
 
-        <div className="prod-img-wrapper">
+        <div className="prod-wrp">
           <Link
             to="/detalle"
             onClick={() => {
               getDetalle(id);
             }}
           >
-            <img src={imagen[0].formats.thumbnail.url} alt="" />
+            <div className="prod-img-wrp">
+              <img
+                src={imagen[0].formats.thumbnail.url}
+                alt=""
+                className="prod-img"
+              />
+            </div>
           </Link>
         </div>
         <h4 className="prod-precio">${dotPrice(precio)}</h4>
         <button
-          className="btn btn-dark"
+          className="btn"
           onClick={() => {
             addCarrito(id);
           }}

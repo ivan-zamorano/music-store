@@ -16,17 +16,16 @@ const Filtro = (props) => {
     return splitStr.join(" ");
   };
 
-  return (
-    <div className="filtro">
-      <li
-        onClick={() => {
-          addFiltros(id);
-        }}
-      >
-        {capitalize(categoria)}
-      </li>
-    </div>
-  );
+  const navBtn = document.getElementById("navBtn");
+
+  const handleClick = () => {
+    addFiltros(id);
+    // if (window.innerWidth < 992) {
+    //   navBtn.click();
+    // }
+  };
+
+  return <li onClick={handleClick}>{capitalize(categoria)}</li>;
 };
 
 export default Filtro;

@@ -7,12 +7,44 @@ header {
 .home-logo {
   font-family: "Lobster", cursive;
   letter-spacing: 3px;
-
   color: #e0e0e0;
+  position: absolute;
+  left: 42%;
+  top: 8px;
+}
+
+.nav-btn {
+  border: 2px solid rgba(255, 255, 255, 0.548);
+  border-radius: 15%;
+  background: transparent;
+  padding: 5px;
+}
+
+.nav-btn:target {
+  border: 2px solid rgba(255, 255, 255, 0.753);
+}
+
+.nav-btn-filtros li {
+  width: 100%;
+  font-size: 1.25rem;
+  font-weight: 600;
+  padding: 0.5rem 1rem;
+  border-bottom: 1px solid rgba(160, 159, 159, 0.815);
+  cursor: pointer;
+  transition: 0.25s;
+  text-decoration: none;
+}
+
+.nav-btn-filtros a {
+  text-decoration: none;
+  color: #444;
+}
+
+.navbar-toggler-icon {
+  font-size: 1rem;
 }
 
 .home-logo h3 {
-  *font-size: 35px;
   line-height: 25px;
 }
 
@@ -21,7 +53,87 @@ header {
   padding: 10px;
 }
 
+#dropdown-menu {
+  margin: 0;
+  padding: 0;
+}
+
+.dropdown-nav ul {
+  background: linear-gradient(
+    90deg,
+    rgba(84, 180, 199, 1) 0%,
+    rgba(176, 239, 255, 1) 84%,
+    rgba(208, 248, 255, 1) 100%
+  );
+  border-radius: 0;
+}
+
+.nav-filtros {
+  display: none;
+}
+
 .header-cart {
+  font-size: 1.5rem;
+  *border: 1px red solid;
+}
+
+.header-cart a {
   color: #ffffff;
-  font-size: 22px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  *border: 1px red solid;
+}
+
+#nav-carrito:hover,
+#nav-carrito:focus {
+  color: #ffffff;
+}
+
+.header-cart a span:nth-child(1) {
+  *border: 1px red solid;
+  margin-right: 0.5rem;
+  background-color: #444;
+  padding: 2px 10px 3px 10px;
+  font-size: 1rem;
+  border-radius: 50%;
+  *color: #0097a7;
+}
+
+@media only screen and (min-device-width: 991px) {
+  .home-logo {
+    left: 20px;
+    top: 10px;
+  }
+
+  .nav-filtros {
+    height: 50px;
+    display: flex;
+    align-items: center;
+    background: #088896;
+  }
+
+  .nav-filtros li {
+    color: #333;
+    *text-shadow: 1px 1px 8px #ffffff49;
+  }
+
+  .nav-filtros a {
+    text-decoration: none;
+  }
+
+  .nav-filtros li:hover {
+    color: #ffffff;
+  }
+
+  .dropdown-nav {
+    display: none;
+  }
+
+  .home-logo {
+    position: relative;
+    top: 0;
+    left: 0;
+  }
 }

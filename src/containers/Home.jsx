@@ -10,7 +10,7 @@ const Home = () => {
   );
   return (
     <>
-      <div className="home">
+      <section className="home">
         <div className="home-splash">
           <div className="container splash">
             <h1>Music Store</h1>
@@ -29,7 +29,7 @@ const Home = () => {
             </div>
           </div>
         </div>
-      </div>
+      </section>
     </>
   );
 };

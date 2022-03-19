@@ -8,6 +8,7 @@ const ADD_FILTROS = "ADD_FILTROS";
 const DEL_ALL_FILTROS = "DEL_ALL_FILTROS";
 const DISPLAY = "DISPLAY";
 const GET_DETALLE = "GET_DETALLE";
+const SET_LOADING = "SET_LOADING";
 
 const Actions = (state, action) => {
   const { payload, type } = action;
@@ -56,10 +57,11 @@ const Actions = (state, action) => {
         ...state,
         detalle: payload,
       };
-    // return {
-    //   ...state,
-    //   detalle: state.productos.filter((item) => item.id === payload),
-    // };
+    case SET_LOADING:
+      return {
+        ...state,
+        loading: payload,
+      };
     default:
       return;
   }
