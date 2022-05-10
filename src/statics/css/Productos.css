@@ -1,13 +1,16 @@
 .productos-section {
   min-height: 100vh;
   margin-top: 50px;
-  margin-right: 30px;
 }
 
 .grid-productos {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
+}
+
+.productos-filtros {
+  width: 100%;
 }
 
 .loading {
@@ -17,9 +20,4 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  position: absolute;
-}
-
-.productos-filtros {
-  width: 100%;
 }

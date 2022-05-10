@@ -1,10 +1,11 @@
 import React, { useContext } from "react";
 import "../statics/css/ItemCarrito.css";
 import Context from "../context/Context";
+import { dotPrice } from "../services/Functions";
 
 const ItemCarrito = (props) => {
   const { marca, modelo, precio, imagen, id } = props;
-  const { delCarrito, dotPrice } = useContext(Context);
+  const { delCarrito } = useContext(Context);
 
   const handleDel = () => {
     delCarrito(id);

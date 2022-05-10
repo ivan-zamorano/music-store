@@ -1,28 +1,17 @@
 import React from "react";
-import "../statics/css/Filtro.css";
 import Context from "../context/Context";
 import { useContext } from "react";
+import { capitalize } from "../services/Functions";
+import filtros from "../services/Filtros.json";
 
 const Filtro = (props) => {
-  const { categoria, id } = props;
-  const { addFiltros } = useContext(Context);
-
-  let capitalize = function (string) {
-    var splitStr = string.toLowerCase().split(" ");
-    for (var i = 0; i < splitStr.length; i++) {
-      splitStr[i] =
-        splitStr[i].charAt(0).toUpperCase() + splitStr[i].substring(1);
-    }
-    return splitStr.join(" ");
-  };
-
-  const navBtn = document.getElementById("navBtn");
+  const { id, categoria } = props;
+  const { addFiltros, setLoading } = useContext(Context);
 
   const handleClick = () => {
-    addFiltros(id);
-    // if (window.innerWidth < 992) {
-    //   navBtn.click();
-    // }
+    //addFiltros(id);
+    //setLoading(true);
+    console.log(categoria);
   };
 
   return <li onClick={handleClick}>{capitalize(categoria)}</li>;

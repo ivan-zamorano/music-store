@@ -74,7 +74,6 @@ header {
 
 .header-cart {
   font-size: 1.5rem;
-  *border: 1px red solid;
 }
 
 .header-cart a {
@@ -83,7 +82,6 @@ header {
   flex-direction: row;
   align-items: center;
   justify-content: center;
-  *border: 1px red solid;
 }
 
 #nav-carrito:hover,
@@ -92,13 +90,11 @@ header {
 }
 
 .header-cart a span:nth-child(1) {
-  *border: 1px red solid;
   margin-right: 0.5rem;
   background-color: #444;
-  padding: 2px 10px 3px 10px;
-  font-size: 1rem;
+  padding: 2px 7px 2px 7px;
+  font-size: 0.7rem;
   border-radius: 50%;
-  *color: #0097a7;
 }
 
 @media only screen and (min-device-width: 991px) {
@@ -114,17 +110,38 @@ header {
     background: #088896;
   }
 
-  .nav-filtros li {
+  .nav-filtros .filtros li {
     color: #333;
-    *text-shadow: 1px 1px 8px #ffffff49;
   }
 
-  .nav-filtros a {
+  /* .nav-filtros a {
     text-decoration: none;
-  }
+  } */
 
   .nav-filtros li:hover {
     color: #ffffff;
+  }
+
+  .filtros {
+    width: 100%;
+    margin: 0;
+    display: flex;
+    flex-direction: row;
+  }
+
+  .filtros li {
+    *width: 100%;
+    display: inline-block;
+    font-size: 1.25rem;
+    font-weight: 600;
+    padding: 0 1rem;
+    cursor: pointer;
+    transition: 0.25s;
+  }
+
+  .filtros li p {
+    display: inline;
+    margin: 0;
   }
 
   .dropdown-nav {
@@ -135,5 +152,10 @@ header {
     position: relative;
     top: 0;
     left: 0;
+  }
+
+  .header-cart a span:nth-child(1) {
+    font-size: 1rem;
+    padding: 2px 10px 3px 10px;
   }
 }

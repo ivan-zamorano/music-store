@@ -8,7 +8,7 @@ import { Link } from "react-router-dom";
 const Carrito = () => {
   const { carrito } = useContext(Context);
 
-  const toRender = () => {
+  const renderCarrito = () => {
     if (carrito.length === 0) {
       return (
         <div className="carrito-vacio">
@@ -25,7 +25,7 @@ const Carrito = () => {
 
   return (
     <>
-      <div className="carrito container">{toRender()}</div>
+      <div className="carrito container">{renderCarrito()}</div>
     </>
   );
 };

@@ -8,7 +8,9 @@ const Footer = () => {
         <div className="container-fluid footer">
           <p>Music Store</p>
           <p>2022</p>
-          <a href="">Zeta DevWorks</a>
+          <a href="https://zeta-devworks.web.app/" target="_blank">
+            Zeta DevWorks
+          </a>
         </div>
       </footer>
     </>

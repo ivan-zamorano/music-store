@@ -1,50 +1,43 @@
-import React, { useContext, useEffect } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import Context from "../context/Context";
 import Filtro from "./Filtro";
-import "../statics/css/Filtros.css";
+//import "../statics/css/Filtros.css";
 import { Link } from "react-router-dom";
+import filtros from "../services/Filtros.json";
+import { capitalize } from "../services/Functions";
 
 const Filtros = () => {
-  const { filtros, getFiltros, seleccion, delAllFiltros } = useContext(Context);
+  // const { filtros, getFiltros, setLoading, delAllFiltros } =
+  //   useContext(Context);
+  const [subCategoria1, setSubCategoria1] = useState(false);
 
-  useEffect(() => {
-    getFiltros();
-  }, []);
+  let caca = document.getElementById("caca");
+
+  const showSub1 = () => {
+    setSubCategoria1(!subCategoria1);
+  };
 
   return (
     <>
-      {/* <div className="filtros-wrp">
-        <ul className="filtros navbar-nav">
-          {filtros.map((item) => (
-            <li>
-              <Filtro {...item} key={item.id} />
-            </li>
-          ))}
-          <li
-            onClick={() => {
-              delAllFiltros();
-            }}
-            className="filtros-all"
-          >
-            Todas
-          </li>
-        </ul>
-      </div> */}
-      {filtros.map((item) => (
-        // <Filtro {...item} key={item.id} />
-        <Link to={"/"}>
-          <Filtro {...item} key={item.id} />
-        </Link>
-      ))}
-      <Link to={"/"}>
-        <li
-          onClick={() => {
-            delAllFiltros();
-          }}
-        >
-          Todas
+      {/* <li id="caca" onClick={pepa}>
+        
+      </li> */}
+      {Object.keys(filtros.categoria).map((item) => (
+        <li onClick={showSub1}>
+          <p>{capitalize(item)}</p>
+          {subCategoria1 ? (
+            <ul>
+              <li>ta</li>
+              <li>te</li>
+              <li>ti</li>
+              <li>to</li>
+              <li>tu</li>
+            </ul>
+          ) : (
+            ""
+          )}
         </li>
-      </Link>
+      ))}
     </>
   );
 };

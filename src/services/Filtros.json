@@ -1,0 +1,12 @@
+{
+  "categoria": {
+    "amplificadores": {
+      "amplificador-bajo": ["combo", "cabezal", "caja"],
+      "amplificador-guitarra": ["combo", "cabezal", "caja"]
+    },
+    "bajos": ["bajos-acusticos", "bajos-electricos"],
+    "guitarras": ["guitarras-acusticas", "guitarras-electricas"],
+    "pedales-fx": ["single-fx", "multi-fx"],
+    "percusion": ["baterias", "pedal-bombo", "platillos", "redoblantes"]
+  }
+}

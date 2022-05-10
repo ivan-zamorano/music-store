@@ -1,15 +1,16 @@
-import React, { useContext } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import ItemCarrito from "../components/ItemCarrito";
 import Context from "../context/Context";
+import { dotPrice } from "../services/Functions";
 
 const ContentCarrito = () => {
-  const { carrito, dotPrice } = useContext(Context);
-
+  const { carrito } = useContext(Context);
   let total = 0;
 
-  const getTotal = carrito.map((item) => {
+  carrito.map((item) => {
     total = total + parseInt(item.precio);
   });
+
   return (
     <>
       <div>

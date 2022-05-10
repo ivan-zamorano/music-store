@@ -20,13 +20,6 @@ const Header = () => {
               <h3>Music</h3>
               <h3>Store</h3>
             </Link>
-            {/* <div className="container-fluid" id="nav-filtros">
-              <div className="nav-filtros">
-                <ul className="filtros">
-                  <Filtros />
-                </ul>
-              </div>
-            </div> */}
             <div className="dropdown-nav">
               <button
                 className="nav-btn"

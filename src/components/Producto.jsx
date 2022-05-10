@@ -2,14 +2,11 @@ import React, { useContext } from "react";
 import "../statics/css/Producto.css";
 import Context from "../context/Context";
 import { Link } from "react-router-dom";
+import { dotPrice } from "../services/Functions";
 
 const Producto = (props) => {
   const { marca, modelo, precio, imagen, id } = props;
-  const { addCarrito, getDetalle, dotPrice } = useContext(Context);
-
-  // const dotPrice = (precio) => {
-  //   return precio.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
-  // };
+  const { addCarrito, getDetalle } = useContext(Context);
 
   return (
     <>

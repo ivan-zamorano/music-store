@@ -1,11 +1,11 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import Home from "../containers/Home";
 import Carrito from "../containers/Carrito";
 import Productos from "../containers/Productos";
 import Error404 from "../containers/Error404";
 import Detalle from "../containers/Detalle";
+import Test from "../containers/Test";
 import Layout from "../components/Layout";
-import Data from "../context/Data";
+import ContextProvider from "../context/ContextProvider";
 
 const App = () => {
   return (
@@ -17,17 +17,17 @@ const App = () => {
         crossOrigin="anonymous"
       />
       <BrowserRouter>
-        <Data>
+        <ContextProvider>
           <Layout>
             <Routes>
               <Route path="/" element={<Productos />} />
               <Route path="/carrito" element={<Carrito />} />
-              <Route path="/productos" element={<Productos />} />
               <Route path="/detalle" element={<Detalle />} />
+              <Route path="/test" element={<Test />} />
               <Route path="" element={<Error404 />} />
             </Routes>
           </Layout>
-        </Data>
+        </ContextProvider>
       </BrowserRouter>
     </>
   );

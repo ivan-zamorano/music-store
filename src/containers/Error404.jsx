@@ -1,11 +1,11 @@
-import React from 'react'
+import React from "react";
 
 const Error404 = () => {
-    return (
-        <div>
-            <h1>Bardeaste wache...</h1>
-        </div>
-    )
-}
+  return (
+    <div>
+      <h1>Oops! No hay nada por aquí...</h1>
+    </div>
+  );
+};
 
-export default Error404
+export default Error404;
