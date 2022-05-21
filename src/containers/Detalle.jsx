@@ -1,6 +1,6 @@
 import React, { useContext, useEffect, useState } from "react";
 import Context from "../context/Context";
-import Filtros from "../components/Filtros";
+//import Filtros from "../components/Filtros";
 import "../statics/css/Detalle.css";
 
 const Detalle = () => {

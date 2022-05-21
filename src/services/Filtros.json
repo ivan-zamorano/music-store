@@ -8,5 +8,15 @@
     "guitarras": ["guitarras-acusticas", "guitarras-electricas"],
     "pedales-fx": ["single-fx", "multi-fx"],
     "percusion": ["baterias", "pedal-bombo", "platillos", "redoblantes"]
+  },
+  "nombres": {
+    "amplificadores": {
+      "para bajo": ["combo", "cabezal", "caja"],
+      "para guitarra": ["combo", "cabezal", "caja"]
+    },
+    "bajos": ["bajos acústicos", "bajos eléctricos"],
+    "guitarras": ["guitarras acústicas", "guitarras eléctricas"],
+    "efectos": ["pedales", "multiefectos"],
+    "percusion": ["baterias", "pedales de bombo", "platillos", "redoblantes"]
   }
 }

@@ -6,6 +6,7 @@ import Detalle from "../containers/Detalle";
 import Test from "../containers/Test";
 import Layout from "../components/Layout";
 import ContextProvider from "../context/ContextProvider";
+import { FilterProvider } from "../context/FilterProvider";
 
 const App = () => {
   return (
@@ -18,15 +19,17 @@ const App = () => {
       />
       <BrowserRouter>
         <ContextProvider>
-          <Layout>
-            <Routes>
-              <Route path="/" element={<Productos />} />
-              <Route path="/carrito" element={<Carrito />} />
-              <Route path="/detalle" element={<Detalle />} />
-              <Route path="/test" element={<Test />} />
-              <Route path="" element={<Error404 />} />
-            </Routes>
-          </Layout>
+          <FilterProvider>
+            <Layout>
+              <Routes>
+                <Route path="/" element={<Productos />} />
+                <Route path="/carrito" element={<Carrito />} />
+                <Route path="/detalle" element={<Detalle />} />
+                <Route path="/test" element={<Test />} />
+                <Route path="" element={<Error404 />} />
+              </Routes>
+            </Layout>
+          </FilterProvider>
         </ContextProvider>
       </BrowserRouter>
     </>

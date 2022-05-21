@@ -1,0 +1,25 @@
+.dropdown-filters {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  padding: 0.5rem 0;
+  top: 148px;
+  width: auto;
+  background: #088896;
+  border-radius: 0;
+}
+
+.submenu-item {
+  width: 100%;
+  font-size: 1rem;
+  font-weight: 600;
+  display: inline;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+  transition: 0.25s;
+  color: #abd0d4;
+}
+
+.submenu-item:hover {
+  color: #fff;
+}

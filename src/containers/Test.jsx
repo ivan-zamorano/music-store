@@ -2,23 +2,32 @@ import React, { useState } from "react";
 import "../statics/css/Test.css";
 // Test filtros
 import filtros from "../services/Filtros.json";
-import Dropdown from "../components/Dropdown";
 
 const Test = () => {
-  const categoria = Object.entries(filtros.categoria);
+  const entradas = Object.entries(filtros.categoria);
+  let categorias = [];
   let subCategoria1 = [];
   let subCategoria2 = [];
   let subCategoria3 = [];
 
-  const getKeysCategorias = () => {
-    categoria.map((item) => {
-      console.log(item[0]);
+  const setCategorias = () => {
+    entradas.forEach((item, index) => {
+      item.push(index);
+      categorias.push(item);
     });
   };
 
+  setCategorias();
+
   const setSubCategoria1 = () => {
-    categoria.map((item) => {
-      subCategoria1.push(item[1]);
+    const subCat = [];
+    entradas.forEach((item, index) => {
+      //console.log(Array.isArray(item[1]));
+      if (Array.isArray(item[1]) === true) {
+        subCat.push([item[1], index]);
+        console.log(subCat);
+        //console.log(getArray);
+      }
     });
   };
 
@@ -66,9 +75,9 @@ const Test = () => {
     });
   };
 
-  setSubCategoria1();
-  getKeysSubCategoria1();
-  setSubCategoria2();
+  //setSubCategoria1();
+  //getKeysSubCategoria1();
+  //setSubCategoria2();
   //getKeysSubCategoria2();
 
   const handleClick = () => {
@@ -80,7 +89,6 @@ const Test = () => {
       <div className="container test-container">
         <h1>TEST ZONE</h1>
         <button onClick={handleClick}>CLICK ME</button>
-        <Dropdown data={subCategoria1} />
       </div>
     </div>
   );

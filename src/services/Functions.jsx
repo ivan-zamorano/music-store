@@ -1,5 +1,3 @@
-import React from "react";
-
 export const dotPrice = (precio) => {
   return precio.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
 };

@@ -7,10 +7,12 @@ const ContextProvider = (props) => {
   const { children } = props;
 
   const estadoInicial = {
+    productosInit: [],
     productos: [],
     carrito: [],
     detalle: [],
     loading: true,
+    filtro: "",
   };
 
   //localStorage.clear();
@@ -29,7 +31,12 @@ const ContextProvider = (props) => {
       "https://music-store-ssd.herokuapp.com/productos"
     );
     setLoading(false);
+    setProductos(res.data);
     dispatch({ type: "GET_PRODUCTOS", payload: res.data });
+  };
+
+  const setProductos = (prods) => {
+    dispatch({ type: "SET_PRODUCTOS", payload: prods });
   };
 
   const addCarrito = (item) => {
@@ -62,6 +69,10 @@ const ContextProvider = (props) => {
     dispatch({ type: "SET_LOADING", payload: loadingState });
   };
 
+  const setFiltros = (filtro) => {
+    dispatch({ type: "SET_FILTRO", payload: filtro });
+  };
+
   return (
     <Context.Provider
       value={{
@@ -74,6 +85,8 @@ const ContextProvider = (props) => {
         addCarrito,
         delCarrito,
         getDetalle,
+        setFiltros,
+        setLoading,
       }}
     >
       {children}

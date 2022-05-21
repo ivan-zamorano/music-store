@@ -1,21 +1,22 @@
 //TYPES
 
 const GET_PRODUCTOS = "GET_PRODUCTOS";
+const SET_PRODUCTOS = "SET_PRODUCTOS";
 const ADD_CARRITO = "ADD_CARRITO";
 const DEL_CARRITO = "DEL_CARRITO";
-const DISPLAY = "DISPLAY";
 const GET_DETALLE = "GET_DETALLE";
 const SET_LOADING = "SET_LOADING";
+const SET_FILTRO = "SET_FILTRO";
 
 const Actions = (state, action) => {
   const { payload, type } = action;
   switch (type) {
     case GET_PRODUCTOS:
-      return { ...state, productos: payload };
-    case DISPLAY:
+      return { ...state, productosInit: payload };
+    case SET_PRODUCTOS:
       return {
         ...state,
-        display: payload,
+        productos: payload,
       };
 
     case ADD_CARRITO:
@@ -37,6 +38,13 @@ const Actions = (state, action) => {
       return {
         ...state,
         loading: payload,
+      };
+    case SET_FILTRO:
+      return {
+        ...state,
+        productos: state.productos.filter(
+          (item) => item.categoria.categoria === payload
+        ),
       };
     default:
       return;

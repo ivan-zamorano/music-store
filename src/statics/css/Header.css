@@ -110,27 +110,23 @@ header {
     background: #088896;
   }
 
-  .nav-filtros .filtros li {
+  .filtros-categoria a {
+    text-decoration: none;
     color: #333;
   }
 
-  /* .nav-filtros a {
-    text-decoration: none;
-  } */
-
-  .nav-filtros li:hover {
+  .filtros-categoria a:hover {
     color: #ffffff;
   }
 
-  .filtros {
+  .filtros-main {
     width: 100%;
     margin: 0;
     display: flex;
     flex-direction: row;
   }
 
-  .filtros li {
-    *width: 100%;
+  .filtros-main .filtros-categoria {
     display: inline-block;
     font-size: 1.25rem;
     font-weight: 600;
@@ -139,7 +135,7 @@ header {
     transition: 0.25s;
   }
 
-  .filtros li p {
+  .filtros-main .filtros-categoria p {
     display: inline;
     margin: 0;
   }
