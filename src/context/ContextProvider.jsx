@@ -7,6 +7,7 @@ const ContextProvider = (props) => {
   const { children } = props;
 
   const estadoInicial = {
+    mobile: null,
     productosInit: [],
     productos: [],
     carrito: [],
@@ -25,6 +26,10 @@ const ContextProvider = (props) => {
   const storageDetalle = JSON.parse(localStorage.getItem("detalle"));
 
   const [state, dispatch] = useReducer(Actions, estadoInicial);
+
+  const isMobile = (value) => {
+    dispatch({ type: "IS_MOBILE", payload: value });
+  };
 
   const getProductos = async () => {
     const res = await axios.get(
@@ -81,6 +86,8 @@ const ContextProvider = (props) => {
         display: state.display,
         detalle: storageDetalle,
         loading: state.loading,
+        mobile: state.mobile,
+        isMobile,
         getProductos,
         addCarrito,
         delCarrito,

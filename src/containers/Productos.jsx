@@ -2,12 +2,16 @@ import React, { useContext, useEffect } from "react";
 import Producto from "../components/Producto";
 import "../statics/css/Productos.css";
 import Context from "../context/Context";
+import { FilterContext } from "../context/FilterProvider";
 
 const Productos = () => {
   const { getProductos, productos, loading } = useContext(Context);
+  const { redirected } = useContext(FilterContext);
 
   useEffect(() => {
-    getProductos();
+    if (redirected === false) {
+      getProductos();
+    }
   }, []);
 
   return (

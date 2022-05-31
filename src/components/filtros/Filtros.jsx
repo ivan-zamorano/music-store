@@ -1,15 +1,13 @@
-import React, { useContext, useState } from "react";
-// import Context from "../../context/Context";
-// import { Link } from "react-router-dom";
+import React, { useContext } from "react";
 import { FilterContext } from "../../context/FilterProvider";
 import Categoria from "./Categoria";
 
-const Filtros = () => {
+const Filtros = (props) => {
   const { categorias, nombres } = useContext(FilterContext);
 
   return (
     <>
-      <nav className="container-fluid nav-filtros p-1">
+      <nav className={props.clase}>
         <ul className="filtros-main">
           {categorias.map((item, index) => (
             <Categoria

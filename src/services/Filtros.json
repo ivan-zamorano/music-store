@@ -17,6 +17,6 @@
     "bajos": ["bajos acústicos", "bajos eléctricos"],
     "guitarras": ["guitarras acústicas", "guitarras eléctricas"],
     "efectos": ["pedales", "multiefectos"],
-    "percusion": ["baterias", "pedales de bombo", "platillos", "redoblantes"]
+    "percusión": ["baterias", "pedales de bombo", "platillos", "redoblantes"]
   }
 }

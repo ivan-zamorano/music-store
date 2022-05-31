@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React, { useContext, useMemo } from "react";
 import "../statics/css/Producto.css";
 import Context from "../context/Context";
 import { Link } from "react-router-dom";
@@ -32,7 +32,7 @@ const Producto = (props) => {
         </div>
         <h4 className="prod-precio">${dotPrice(precio)}</h4>
         <button
-          className="btn"
+          className="btn-producto"
           onClick={() => {
             addCarrito(id);
           }}

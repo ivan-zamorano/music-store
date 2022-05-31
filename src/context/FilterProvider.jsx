@@ -5,6 +5,8 @@ export const FilterContext = createContext();
 
 export const FilterProvider = ({ children }) => {
   //Estados
+  const [mobileMenu, setMobileMenu] = useState(false);
+  const [redirected, setRedirected] = useState(false);
 
   //Data
   const entradas = Object.entries(filtros.categoria);
@@ -38,6 +40,10 @@ export const FilterProvider = ({ children }) => {
         nombres: nombres,
         categorias: categorias,
         sub1: subCategoria1,
+        mobileMenu: mobileMenu,
+        redirected: redirected,
+        setMobileMenu,
+        setRedirected,
       }}
     >
       {children}

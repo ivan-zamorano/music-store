@@ -12,6 +12,7 @@ const Categoria = (props) => {
   const data = props.data;
   const subNames = props.subNames[1];
   const { setFiltros, getProductos, setLoading } = useContext(Context);
+  const { setMobileMenu, setRedirected } = useContext(FilterContext);
 
   const parseData = () => {
     if (Array.isArray(subNames) === true) {
@@ -22,8 +23,12 @@ const Categoria = (props) => {
   };
 
   const handleClick = async () => {
+    setMobileMenu(false);
+    setLoading(true);
+    setRedirected(true);
     await getProductos();
     setFiltros(data[0]);
+    //setSubmenu(!submenu);
   };
   return (
     <>
@@ -35,13 +40,10 @@ const Categoria = (props) => {
         onMouseLeave={() => {
           setSubmenu(false);
         }}
-        onClick={() => {
-          setLoading(true);
-          handleClick();
-        }}
+        onClick={handleClick}
       >
         <Link to="/">{capitalize(props.name)}</Link>
-        {submenu && <Subcategoria1 sub1={parseData()} data={data[1]} />}
+        {/* {submenu && <Subcategoria1 sub1={parseData()} data={data[1]} />} */}
       </li>
     </>
   );

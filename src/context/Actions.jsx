@@ -7,10 +7,13 @@ const DEL_CARRITO = "DEL_CARRITO";
 const GET_DETALLE = "GET_DETALLE";
 const SET_LOADING = "SET_LOADING";
 const SET_FILTRO = "SET_FILTRO";
+const IS_MOBILE = "IS_MOBILE";
 
 const Actions = (state, action) => {
   const { payload, type } = action;
   switch (type) {
+    case IS_MOBILE:
+      return { ...state, mobile: payload };
     case GET_PRODUCTOS:
       return { ...state, productosInit: payload };
     case SET_PRODUCTOS:
