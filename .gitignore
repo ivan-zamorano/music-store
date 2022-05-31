@@ -22,10 +22,12 @@ npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
 
-Test.jsx
-Test.css
-ItemSub1.jsx
-ItemSub2.jsx
-Subcategoria1.jsx
-Subcategoria2.jsx
-Subcategoria1.css
+
+
+/src/statics/css/Test.css
+/src/containers/Test.jsx
+/src/components/filtrosItemSub1.jsx
+/src/components/filtrosItemSub2.jsx
+/src/components/filtrosSubcategoria1.jsx
+/src/components/filtrosSubcategoria2.jsx
+/src/statics/css/Subcategoria1.css
